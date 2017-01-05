@@ -1,0 +1,16 @@
+<h1>Edit Study</h1>
+<%= form_tag "/studies/#{@study.id}", method: :patch do %>
+  <div>
+    <%= label_tag :Name %>
+    <%= text_field_tag :name, @study.name %>
+  </div>
+  <div>
+    <%= label_tag :Condition %>
+    <%= text_field_tag :condition, @study.condition %>
+  </div>
+  <div>
+    <%= label_tag :Compensation %>
+    <%= text_field_tag :compensation, @study.compensation %>
+  </div>
+  <%= submit_tag "Edit Study" %>
+<% end %>

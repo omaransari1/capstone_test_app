@@ -1,0 +1,9 @@
+
+<div class="well">
+  <h2>Name:<%= @study.name %></h2>
+  <p>Condition:<%= @study.condition %>
+  <p>Compensation:<%= @study.compensation %></p>
+  <p>Created at: <%= @study.friendly_created_at %></p>
+  <button type="button" class="btn btn-default"><a href='/studies'>Back to studies</a></button>
+  <button type="button" class="btn btn-default"><a href='/studies'><%= link_to "Delete this study", "/studies/#{@study.id}", method: :delete %></a></button>
+</div>

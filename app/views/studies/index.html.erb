@@ -1,1 +1,13 @@
 <h1>All Studies!!!</h1>
+    <% @studies.each do |study| %>
+      <div class="col-md-4">
+        <div class="well">
+          <p>Name:<%= study.name %></p>
+          <p>Condition:<%= study.condition %>
+          <p>Compensation:<%= study.compensation %></p>
+          
+          <p>Created at: <%= study.friendly_created_at %></p>
+
+        </div>
+      </div>
+    <% end %>

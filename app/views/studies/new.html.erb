@@ -1,0 +1,16 @@
+<h1>New Study</h1>
+<%= form_tag '/studies', method: :post do %>
+  <div>
+    <%= label_tag :Name %>
+    <%= text_field_tag :name %>
+  </div>
+  <div>
+    <%= label_tag :Condition %>
+    <%= text_field_tag :condition %>
+  </div>
+  <div>
+    <%= label_tag :Compensation %>
+    <%= text_field_tag :compensation %>
+  </div>
+  <%= submit_tag "Add Study" %>
+<% end %>
