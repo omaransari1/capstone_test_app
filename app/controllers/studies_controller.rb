@@ -8,12 +8,15 @@ class StudiesController < ApplicationController
   end
 
   def create
+    redirect_to
   end
 
   def show
+    render 'show.html.erb'
   end
 
   def edit
+    render 
   end
 
   def update
