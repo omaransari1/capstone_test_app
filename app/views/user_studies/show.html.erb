@@ -1,0 +1,15 @@
+<h1>The studies of <%=current_user.first_name%></h1>
+
+    <% @user_studies.each do |user_study| %>
+      <div class="col-md-4">
+        <div class="well">
+          <p>Name:<%= user_study.study.name %></p>
+          <p>Condition:<%= user_study.study.condition %>
+          <p>Compensation:<%= user_study.study.compensation %></p>
+          
+          <p>Created at: <%= user_study.study.friendly_created_at %></p>
+          <a href="/studies/<%=user_study.study.id%>">Go to this study</a>
+
+        </div>
+      </div>
+    <% end %>

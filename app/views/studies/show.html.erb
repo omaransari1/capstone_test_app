@@ -6,4 +6,12 @@
   <p>Created at: <%= @study.friendly_created_at %></p>
   <button type="button" class="btn btn-default"><a href='/studies'>Back to studies</a></button>
   <button type="button" class="btn btn-default"><a href='/studies'><%= link_to "Delete this study", "/studies/#{@study.id}", method: :delete %></a></button>
+  <h3>Join Study</h3>
+        <%= form_tag '/user_studies', method: :post do %>
+          <div>
+            <%= hidden_field_tag :study_id, @study.id %>
+          </div>
+          <%= submit_tag "Join"%>
+        <%end%>
+</div>
 </div>

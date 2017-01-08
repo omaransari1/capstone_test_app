@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get '/' => 'studies#index'
   get '/studies' => 'studies#index'
   get '/studies/new' => 'studies#new'
   post 'studies' => 'studies#create'
@@ -14,4 +15,7 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
+
+  get '/user_studies' => 'user_studies#show'
+  post '/user_studies' => 'user_studies#create'
 end
