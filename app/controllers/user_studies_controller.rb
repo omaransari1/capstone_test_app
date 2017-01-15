@@ -1,7 +1,7 @@
 class UserStudiesController < ApplicationController
 
   def show
-    @user_studies = UserStudy.where(id: current_user.id)
+    @user_studies = UserStudy.where(user_id: current_user.id)
     render 'show.html.erb'
   end
 
