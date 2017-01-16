@@ -9,4 +9,13 @@ class ApplicationController < ActionController::Base
   def authenticate_user!
     redirect_to '/login' unless current_user
   end
+
+  def current_researcher
+    @current_researcher ||= Researcher.find_by(id: session[:researcher_id]) if session[:researcher_id]
+  end
+  helper_method :current_researcher
+
+  def authenticate_researcher!
+    redirect_to '/researchers_login' unless current_researcher
+  end
 end

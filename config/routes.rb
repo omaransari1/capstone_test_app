@@ -10,12 +10,21 @@ Rails.application.routes.draw do
   patch '/studies/:id' => 'studies#update'
   delete '/studies/:id' => 'studies#destroy'
 
+  get 'sites' => 'sites#index'
+  get 'sites/:id' => 'sites#show'
+
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
+
+  get '/researchers_signup' => 'researchers#new'
+  post '/researchers' => 'researchers#create'
+  get '/researchers_login' => 'researchers_sessions#new'
+  post '/researchers_login' => 'researchers_sessions#create'
+  get '/researchers_logout' => 'researchers_sessions#destroy'
 
   get '/user_studies' => 'user_studies#show'
   post '/user_studies' => 'user_studies#create'

@@ -1,0 +1,2 @@
+module ResearchersSessionsHelper
+end
