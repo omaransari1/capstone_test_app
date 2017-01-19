@@ -11,7 +11,7 @@ class ResearchersSessionsController < ApplicationController
       redirect_to '/'
     else
       flash[:warning] = 'Invalid email or password!'
-      redirect_to '/login'
+      redirect_to '/researchers_login'
     end
   end
 

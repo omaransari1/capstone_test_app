@@ -1,25 +1,24 @@
-<!-- <h1>All Studies!!!</h1>
-    <% @studies.each do |study| %>
+ <!--<h1>The studies of <%=current_user.first_name%></h1>
+   <% @user_studies.each do |user_study| %>
       <div class="col-md-4">
         <div class="well">
-          <p>Name:<%= study.name %></p>
-          <p>Condition:<%= study.condition %>
-          <p>Compensation:<%= study.compensation %></p>
+          <p>Name:<%= user_study.study.name %></p>
+          <p>Condition:<%= user_study.study.condition %>
+          <p>Compensation:<%= user_study.study.compensation %></p>
           
-          <p>Created at: <%= study.friendly_created_at %></p>
-          <a href="/studies/<%=study.id%>">Go to this study</a>
+          <p>Created at: <%= user_study.study.friendly_created_at %></p>
+          <a href="/studies/<%=user_study.study.id%>">Go to this study</a>
 
         </div>
       </div>
     <% end %> -->
-    
-    <!-- Content Wrapper Start -->
-    <div class="content_wrapper">
+
+<div class="content_wrapper">
       <!-- Blog Breadscrumb Start -->
         <div class="breadcrumb_wrap" data-stellar-background-ratio="0.3" style="background: url(/images/bg_img.jpg); background-attachment: fixed; background-position: 50% 50%;">
           <div class="breadcrumb_wrap_inner">
               <div class="container">
-                <h1>Available Studies</h1>
+                <h1>My Studies</h1>
                     <ul class="breadcrumbs">
                       <li><a href="index.html">Home</a> /</li>
                       <li>Studies (list view)</li>
@@ -74,27 +73,28 @@
                     <!-- Courses Top Search End -->
                     
                     <!-- Courses Wrapper Start -->
-                   <% @studies.each do |study| %>
+                  
                     <div class="wrapper_course">
+                    <% @user_studies.each do |user_study| %>
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="course_block">
                                 <div class="img_wrap">
-                                    <img class="sizeadjust" src="<%= study.image %>" onerror="if (this.src != 'error.jpg') this.src = '/images/quikkstudylogo.png';">
-                                    <div class="course_img_hoverlay_btn"><a href="/studies/<%=study.id%>" title="View More" class="fa fa-eye"></a></div>
-                                    <h4><%= study.condition %> </h4>
+                                    <img class="sizeadjust" src="<%= user_study.study.image %>" onerror="if (this.src != 'error.jpg') this.src = '/images/quikkstudylogo.png';">
+                                    <div class="course_img_hoverlay_btn"><a href="/studies/<%=user_study.study.id%>" title="View More" class="fa fa-eye"></a></div>
+                                    <h4><%= user_study.study.condition %> </h4>
                                 </div>
                                 <div class="info_wrap">
                                     <div class="science">
                                         <div class="course_info">
-                                            <p><%= study.description %></p>
+                                            <p><%= user_study.study.description %></p>
                                         </div>
                                     </div>
                                     <div class="science course_count_wrap">
                                         <div class="course_count">
-                                            Duration: <span><%= study.duration %></span>
+                                            Duration: <span><%= user_study.study.duration %></span>
                                         </div>
                                         <div class="course_price">
-                                            Compensation: <span><%= study.compensation %></span>
+                                            Compensation: <span><%= user_study.study.compensation %></span>
                                         </div>
                                     </div>
                                 </div>
@@ -366,3 +366,4 @@
     <script type="text/javascript" src="/js/jquery-plugin-collection.js"></script>
     <script type="text/javascript" src="/js/owl-carousel.js"></script>
     <script type="text/javascript" src="/js/js-functions.js"></script>
+    

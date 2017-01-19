@@ -1,0 +1,2 @@
+class SiteStudiesController < ApplicationController
+end

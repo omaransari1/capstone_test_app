@@ -96,71 +96,18 @@
                     </div>
                     <div class="col-md-9 col-sm-7 col-xs-7 pull-xs-right">
                       <!-- Mobile Menu Start -->
-                        <div id="dl-menu" class="dl-menuwrapper">
-                            <button class="dl-trigger visible-sm visible-xs"><i class="fa fa-bars"></i></button>
-                            <ul class="dl-menu">
-                              <li>
-                                    <h5 class="sp_module_title">LearnMate</h5>
-                                </li>
-                                <li>
-                                    <a href="/">Home</a>
-                                    <ul class="dl-submenu">
-                                        <li><a href="index.html">Home 1</a></li>
-                                        <li><a href="index2.html">Home 2</a></li>
-                                        <li><a href="index3.html">Home 3</a></li>
-                                        <li><a href="index4.html">Home 4</a></li>
-                                        <li><a href="index5.html">Home 5</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">Studies</a>
-                                    <ul class="dl-submenu">
-                                        <li><a href="/studies">All Studies</a></li>
-                                        <li><a href="course_list.html">Course List</a></li>
-                                        <li><a href="#">Course Single</a>
-                                            <ul class="dl-submenu">
-                                                <li><a href="course_dtl.html">Science</a></li>
-                                                <li><a href="course_dtl.html">Accounting</a></li>
-                                                <li><a href="course_dtl.html">Business Development</a></li>
-                                                <li><a href="course_dtl.html">Psychology</a></li>
-                                                <li><a href="course_dtl.html">Food & Drinking</a></li>
-                                                <li><a href="course_dtl.html">Arts & Media</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">Researchers</a>
-                                    <ul class="dl-submenu">
-                                    <% if current_researcher %>
-                                        <li><%= link_to "Logout", "/researchers_logout", method: :delete %></li>
-                                        <li><a href="/sites">Join A Site</a></li>
-                                        <li><a href="/studies/new">Post New Study</a></li>
-                                    <% else %>
-                                        <li><a href="/researchers_signup">Register</a></li>
-                                        <li><a href="/researchers_login">Login</a></li>
-                                    <% end %>
-                                    </ul>
-                                </li>
-                                <li><a class="trigger" href="teachers.html">Teachers</a></li>
-                                <li><a class="trigger" href="contact.html">Contact us</a></li>
-                            </ul>
-                        </div>
+  
                         <!-- Mobile Menu End -->
                         <div class="main_menu_wrap">
                             <ul class="main_menu">
-                                <li><a class="trigger" href="/">Home <i class="fa fa-angle-down"></i></a>
-                                  <ul class="submenu">
-                                      <li><a href="index.html">Home 1</a></li>
-                                        <li><a href="index2.html">Home 2</a></li>
-                                        <li><a href="index3.html">Home 3</a></li>
-                                        <li><a href="index4.html">Home 4</a></li>
-                                        <li><a href="index5.html">Home 5</a></li>
-                                    </ul>                                
-                                </li>
+                                <li><a class="trigger" href="/">Home</a></li>
                                 <li><a class="trigger" href="/studies">Studies <i class="fa fa-angle-down"></i></a>
                                   <ul class="submenu">
                                       <li><a href="/studies">All studies</a></li>
+                                      <% if current_user %>
+                                      <li><a href="/user_studies">My studies</a></li>
+                                      <%end%>
+
                                       <li><a href="course_list.html">Course List</a></li>
                                       <li><a href="#">Course Single <i class="fa fa-angle-right"></i></a>
                                           <ul class="sub_menu">
@@ -184,7 +131,7 @@
                                   <ul class="submenu">
                                     <% if current_researcher %>
                                       <li><%= link_to "Logout", "/researchers_logout", method: :delete %></li>
-                                      <li><a href="/sites">Join A Site</a></li>
+                                      <li><a href="/sites">Find Your Site</a></li>
                                       <li><a href="/studies/new">Post New Study</a></li>
                                     <% else %>
                                       <li><a href="/researchers_signup">Register</a></li>

@@ -22,10 +22,11 @@ Rails.application.routes.draw do
 
   get '/researchers_signup' => 'researchers#new'
   post '/researchers' => 'researchers#create'
+  post '/researchers_joinsite' => 'researchers#joinsite'
   get '/researchers_login' => 'researchers_sessions#new'
   post '/researchers_login' => 'researchers_sessions#create'
   delete '/researchers_logout' => 'researchers_sessions#destroy'
 
-  get '/user_studies' => 'user_studies#show'
+  get '/user_studies' => 'user_studies#index'
   post '/user_studies' => 'user_studies#create'
 end

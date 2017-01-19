@@ -9,8 +9,7 @@ class ResearchersController < ApplicationController
       last_name: params[:last_name],
       email: params[:email],
       password: params[:password],
-      password_confirmation: params[:password_confirmation],
-      site_id: ""
+      password_confirmation: params[:password_confirmation]
     )
     if researcher.save
       session[:researcher_id] = researcher.id
@@ -20,5 +19,13 @@ class ResearchersController < ApplicationController
       flash[:warning] = 'Invalid email or password!'
       redirect_to '/researchers_signup'
     end
+  end
+
+  def joinsite
+    researcher = Researcher.find_by(id: session[:researcher_id])
+    researcher.site_id = params[:site_id]
+    researcher.save
+    flash[:success] = 'Site joined successfully!'
+    redirect_to "/sites/#{params[:site_id]}"
   end
 end
