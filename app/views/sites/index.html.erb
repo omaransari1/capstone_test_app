@@ -1,0 +1,355 @@
+
+    
+    <!-- Content Wrapper Start -->
+    <div class="content_wrapper">
+      <!-- Blog Breadscrumb Start -->
+        <div class="breadcrumb_wrap" data-stellar-background-ratio="0.3" style="background: url(/images/bg_img.jpg); background-attachment: fixed; background-position: 50% 50%;">
+          <div class="breadcrumb_wrap_inner">
+              <div class="container">
+                <h1>Clinical Research Sites</h1>
+                    <ul class="breadcrumbs">
+                      <li><a href="index.html">Home</a> /</li>
+                      <li>Sites (list view)</li>
+                    </ul>
+              </div>
+            </div>
+        </div>
+        <!-- Blog Breadscrumb Start -->
+        
+        <!-- Courses Start -->
+        <div id="courses_wrapper" class="courses_wrapper">
+            
+            <!-- Courses Content Start -->
+            <div class="container">
+              <!-- Course Wrapper Start -->
+                <div class="course_wrapp col-lg-9 col-md-8 col-sm-12 col-xs-12">
+                    <!-- Courses Top Search Start -->
+                    <div class="course_to_search_wrapp">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                          <div class="course_to_search_inner">
+                                <div class="course_to_search">
+                                    <div class="course_swicher">
+                                        <a class="fa fa-th-large" title="Grid Layout" href="course_grid.html"></a>
+                                        <a class="fa fa-th-list active" title="List Layout" href="course_list.html"></a>
+                                    </div>
+                                    <div class="search_pannel">
+                                        <form method="post" action="#">
+                                            <select class="selectpicker">
+                                                <option>All Categories</option>
+                                                <option>Science</option>
+                                                <option>Account</option>
+                                                <option>Business</option>
+                                                <option>Psychology</option>
+                                                <option>Food</option>
+                                                <option>Art</option>
+                                            </select>
+                                            <select class="selectpicker">
+                                                <option>Price</option>
+                                                <option>$70</option>
+                                                <option>$77</option>
+                                                <option>$90</option>
+                                                <option>$95</option>
+                                                <option>$100</option>
+                                                <option>$110</option>
+                                            </select>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Courses Top Search End -->
+                    
+                    <!-- Courses Wrapper Start -->
+                    <% @sites.each do |site| %>
+                    <div class="wrapper_course">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="course_block">
+                                <div class="img_wrap">
+                                    <img src="<%=site.image %>" onerror="if (this.src != 'error.jpg') this.src = '/images/quikkstudylogo.png';">
+                                    <div class="course_img_hoverlay_btn"><a href="/sites/<%=site.id%>" title="View More" class="fa fa-eye"></a></div>
+                                    <h4><%= site.name %> </h4>
+                                </div>
+                                <div class="info_wrap">
+                                    <div class="science">
+                                        <div class="course_info">
+                                            <p><%= site.address%></p>
+                                        </div>
+                                    </div>
+                                    <div class="science course_count_wrap">
+                                        <div class="course_count">
+                                            E-mail: <span><%= site.email %></span>
+                                        </div>
+                                        <div class="course_price">
+                                            Ph: <span><%= site.phone_number %></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <%end%>
+                        
+                    <!-- Courses Wrapper End -->
+                    
+                    <div class="clearfix"></div>
+                    <!-- Pagination Start -->
+                    <div class="pager">
+                        <div class="pages">
+                            <ul class="pagination">
+                                <li><a href="">Prev</a></li>
+                                <li class="active"><a href="">1</a></li>
+                                <li><a href="">2</a></li>
+                                <li><a href="">3</a></li>
+                                <li><a href="">4</a></li>
+                                <li><a href="">Next</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Pagination End -->
+                    
+                </div>
+                <!-- Course Wrapper End -->
+                
+                <!-- Course Aside Start -->
+                <div class="aside_wrapper col-lg-3 col-md-4 col-sm-12 col-xs-12">
+                  <!-- Search Course Start -->
+                  <div class="search_course">
+                      <form method="post" action="#">
+                          <input class="form-control" placeholder="What are you looking for?" name="s" type="text">
+                            <button type="submit" class="btn btn_search"><i class="fa fa-search"></i></button>
+                        </form>
+                    </div>
+                    <!-- Search Course End -->
+                    
+                    <!-- Course Category Start -->
+                    <div class="category_course">
+                      <h4>Categories</h4>
+                        <ul>
+                          <li><a href="#">Library Science</a></li>
+                          <li><a href="#">Digital Marketing</a></li>
+                          <li><a href="#">UI/UX Development</a></li>
+                          <li><a href="#">Graphic Design</a></li>
+                          <li><a href="#">.Net 4.0 Framework</a></li>
+                          <li><a href="#">Advance Java Script</a></li>
+                        </ul>
+                    </div>
+                    <!-- Course Category End -->
+                    
+                    <!-- Course Events Start -->
+                    <div class="category_events">
+                      <h4>Events</h4>                        
+                        <ul>
+                          <li>
+                              <div class="date">
+                                  <span class="month">Mar</span>
+                                    <span class="day">20</span>
+                                </div>
+                                <div class="event_txt">
+                                  <h5><a href="#">Grades at Educor Sky Rocket</a></h5>
+                                    <p> Vivamus tellus leo, imperdiet sed sapien.</p>
+                                </div>
+                            </li>
+                            <li>
+                              <div class="date">
+                                  <span class="month">Apr</span>
+                                    <span class="day">15</span>
+                                </div>
+                                <div class="event_txt">
+                                  <h5><a href="#">The Design of HTML5</a></h5>
+                                    <p> Vivamus tellus leo, imperdiet sed sapien.</p>
+                                </div>
+                            </li>
+                            <li>
+                              <div class="date">
+                                  <span class="month">May</span>
+                                    <span class="day">25</span>
+                                </div>
+                                <div class="event_txt">
+                                  <h5><a href="#">Online Learning Glossary</a></h5>
+                                    <p> Vivamus tellus leo, imperdiet sed sapien.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Course Events End -->
+                    
+                    <!-- Course Subscribe Start -->
+                    <div class="course_subscribe">                      
+                      <h4>Subscribe Us</h4>
+                      <form method="post" action="#">
+                          <input class="form-control" placeholder="Email Addrress..." name="s" type="text">
+                            <button type="submit" class="btn btn_subscribe">Subscribe <i class="fa fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                    <!-- Course Subscribe End -->
+                    
+                    <!-- Tags Start -->
+                    <div class="course_tags">
+                      <h4>Tags</h4>
+                        <ul>
+                          <li>
+                              <a href="#">Adobe</a>
+                              <a href="#">Courses</a>
+                              <a href="#">Development</a>
+                              <a href="#">HTML5</a>
+                              <a href="#">Music</a>
+                              <a href="#">Photoshop</a>
+                              <a href="#">Croaldraw</a>
+                              <a href="#">CSS3</a>
+                              <a href="#">Library</a>
+                              <a href="#">Wordpress</a>
+                              <a href="#">Joomla</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Tags End -->
+                    
+                </div>
+                <!-- Course Aside End -->                          
+            </div>
+            <!-- Courses Content End -->
+        </div>
+        <!-- Courses End -->
+        
+        <!-- Count Section Start -->
+        <div id="count" class="count" data-stellar-background-ratio="0.3" style="background: url(images/bg_img.jpg); background-attachment: fixed; background-position: 50% 50%;">
+            <div class="container">
+                <div class="head_part">
+                        <h2>Happy Milistones</h2>
+                        <p>We Have Powerful Milistones With Fun Fact Effects.</p>
+                    </div>
+                <div class="row">
+                    <div class="col-sm-3 col-md-3 col-xs-6">
+                        <div class="funfact expert text-center mb-sm-30">
+                          <div class="icon"><i class="fa fa-user"></i></div>
+                            <div class="counts">
+                                <h2 class="animate-number" data-animation-duration="2000" data-value="730">0</h2>
+                                <h4 class="title">Top Experts</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-md-3 col-xs-6">
+                        <div class="funfact online text-center mb-sm-30">
+                          <div class="icon"><i class="fa fa-book"></i></div>
+                            <div class="counts">
+                                <h2 class="animate-number" data-animation-duration="2000" data-value="3565">0</h2>
+                                <h4 class="title">Online Courses</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-md-3 col-xs-6">
+                        <div class="funfact student second_one text-center mb-sm-30">
+                          <div class="icon"><i class="fa fa-users"></i></div>
+                            <div class="counts">
+                                <h2 class="animate-number" data-animation-duration="2000" data-value="7644">0</h2>
+                                <h4 class="title">Students</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-md-3 col-xs-6">
+                        <div class="funfact placed last text-center mb-sm-30">
+                          <div class="icon"><i class="fa fa-map-marker"></i></div>
+                            <div class="counts">
+                                <h2 class="animate-number" data-animation-duration="2000" data-value="4253">0</h2>
+                                <h4 class="title">student Placed</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>        
+        </div>
+        <!-- Count Section End -->
+        
+        <!-- Blog Start -->
+        <div id="blog" class="blog">
+            <div class="container">
+              <div class="head_part">
+                    <h2>Latest News from LearnMate</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore. Lorem ipsum 
+                    dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                </div>
+                <div class="dtl_wrapper">
+                  <div class="col-md-4 col-sm-6 col-xs-12">
+                      <div class="dtl_block">
+                          <div class="dtl_img">
+                              <img alt="Blog Image" src="images/latest_news.jpg">
+                            </div>
+                            <div class="blog_auther_info">
+                                <div class="blog_auther">
+                                    <span>By <a href="#">Admin</a> / <a href="#">Llibrary</a></span>
+                                </div>
+                                <div class="blog_date">
+                                    Jan <br> 23
+                                </div>
+                            </div>
+                            <div class="blog_info">
+                                <h3><a href="#">This Is Your Chance to Close the Reading Achievement Gap</a></h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipicing elit, sed do eiusmod tempor incididunt ut labore sit amet, consectetur adipisicing elit, eiusmod tempor incididunt ut sed se labore. 
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                <a href="blog_right_sidebar.html" class="btn_glob">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                  <div class="col-md-4 col-sm-6 col-xs-12">
+                      <div class="dtl_block">
+                          <div class="dtl_img">
+                              <img alt="Blog Image" src="images/latest_news.jpg">
+                            </div>
+                            <div class="blog_auther_info">
+                                <div class="blog_auther">
+                                    <span>By <a href="#">Admin</a> / <a href="#">Campus</a></span>
+                                </div>
+                                <div class="blog_date">
+                                    Feb <br> 17
+                                </div>
+                            </div>
+                            <div class="blog_info">
+                                <h3><a href="#">Do Division I Athletes Get the Academics They Deserve?</a></h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipicing elit, sed do eiusmod tempor incididunt ut labore sit amet, consectetur adipisicing elit, eiusmod tempor incididunt ut sed se labore. 
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                <a href="blog_right_sidebar.html" class="btn_glob">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                  <div class="col-md-4 col-sm-6 col-xs-12">
+                      <div class="dtl_block">
+                          <div class="dtl_img">
+                              <img alt="Blog Image" src="images/latest_news.jpg">
+                            </div>
+                            <div class="blog_auther_info">
+                                <div class="blog_auther">
+                                    <span>By <a href="#">Admin</a> / <a href="#">Classroom</a></span>
+                                </div>
+                                <div class="blog_date">
+                                    Mar <br> 25
+                                </div>
+                            </div>
+                            <div class="blog_info">
+                                <h3><a href="#">Defining Learning Analytics and the Insights it Can Bring</a></h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipicing elit, sed do eiusmod tempor incididunt ut labore sit amet, consectetur adipisicing elit, eiusmod tempor incididunt ut sed se labore. 
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                <a href="blog_right_sidebar.html" class="btn_glob">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Blog End -->
+        
+    </div>
+    <!-- Content Wrapper End -->
+    
+    <!-- Offcanvas Menu Start -->
+    <div class="offcanvas_overlay"></div>
+    <!-- Offcanvas Menu End -->
+    
+    <!-- JavaScript -->        
+    <script type="text/javascript" src="/js/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" src="/js/modernizr.custom.js"></script>
+    <script type="text/javascript" src="/js/jquery.dlmenu.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap-select.js"></script>
+    <script type="text/javascript" src="/js/jquery-plugin-collection.js"></script>
+    <script type="text/javascript" src="/js/owl-carousel.js"></script>
+    <script type="text/javascript" src="/js/js-functions.js"></script>

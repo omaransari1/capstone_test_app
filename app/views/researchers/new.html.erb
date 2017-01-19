@@ -1,5 +1,6 @@
+<div class="well">
 <h1>Sign up as a Researcher</h1>
-<%= form_tag '/users', method: :post do  %>
+<%= form_tag '/researchers', method: :post do  %>
   <div>
     <%= label_tag :first_name %>
     <%= text_field_tag :first_name %>
@@ -22,3 +23,4 @@
   </div>
   <%= submit_tag "Submit" %>
 <% end %>
+</div>

@@ -1,20 +1,4 @@
 
-<!-- <div class="well">
-  <h2>Name:<%= @study.name %></h2>
-  <p>Condition:<%= @study.condition %>
-  <p>Compensation:<%= @study.compensation %></p>
-  <p>Created at: <%= @study.friendly_created_at %></p>
-  <button type="button" class="btn btn-default"><a href='/studies'>Back to studies</a></button>
-  <button type="button" class="btn btn-default"><a href='/studies'><%= link_to "Delete this study", "/studies/#{@study.id}", method: :delete %></a></button>
-  <h3>Join Study</h3>
-        <%= form_tag '/user_studies', method: :post do %>
-          <div>
-            <%= hidden_field_tag :study_id, @study.id %>
-          </div>
-          <%= submit_tag "Join"%>
-        <%end%>
-</div>
-</div> -->
 
 
     
@@ -24,11 +8,11 @@
         <div class="breadcrumb_wrap" data-stellar-background-ratio="0.3" style="background: url(images/bg_img.jpg); background-attachment: fixed; background-position: 50% 50%;">
           <div class="breadcrumb_wrap_inner">
               <div class="container">
-                <h1><%= @study.name %></h1>
+                <h1><%= @site.name %></h1>
                     <ul class="breadcrumbs">
                       <li><a href="/">Home</a> /</li>
-                      <li><a href="/studies">Studies</a> /</li>
-                      <li><%=@study.name %></li>
+                      <li><a href="/sites">Sites</a> /</li>
+                      <li><%=@site.name %></li>
                     </ul>
               </div>
             </div>
@@ -47,38 +31,57 @@
                       <!-- Dtl Inner Start -->
                         <div class="dtl_inner last">
                             <div class="dtl_head">
-                                <h1><%= @study.name %></h1>
+                                <h1><%= @site.name %></h1>
                                 <div class="dtl_meta_info">
                                     <p></p>
                                 </div>
                             </div>
                             <div class="dtl_block">
                                 <div class="dtl_img">
-                                    <img alt="Blog Image" src="<%=@study.image %>">
+                                    <img alt="Blog Image" src="<%= @site.image%>">
                                 </div>
                                 <div class="detail_text_wrap">
                                   <div class="info_wrapper">
                                       <div class="info_head">
-                                        <h4>Description</h4>
-                                            <p><%= @study.description %></p>
+                                        <h4>Address</h4>
+                                            <p><%= @site.address %></p>
                                         </div>
                                     </div>
-                                  <div class="info_wrapper">
-                                      <div class="info_head">
-                                        <h4>What You will Learn</h4>                                            
-                                        </div>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-                                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in repre henderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint ocaecat 
-                                        cupidatat nong pro ident sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                        <p>Sed perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque:</p>
-                                        <ul class="arr_menu">
-                                            <li>vamus nda leo etiam ind arcu morbi justo mauris tempus</li>
-                                            <li>Pellentesque lacus vamus lorem arcu semper duiac ras ornare arcu avamus</li>
-                                            <li>Cras ornare arcu avamus nda leo etiam ind arcu morjusto mauris tempus pharetra inter</li>
-                                            <li>Pellentesque lacus vamus lorem arcu semper duiac</li>
-                                        </ul>
-                                        <p>Curabitur at vestibulum sem. Aliquam vehicula neque ac nibh suscipit ultrices. Morbi interdum accumsan arcu nec scelerisque. Phasellus eget purus nulla. Suspendisse quam est, 
-                                        tempor quis consectetur non, interdum vitae diam. Pellentesque volutpat mollis ligula in laoreet.</p>
+                                        <!-- Contact Wrapper Start -->
+                            <div class="info_wrapper">               
+                <!-- Contact Info Start -->
+                                <div class="info_head">
+                    <div class="contact_info">
+                        <div class="contact_info_inner">
+                        
+                                <div class="icon_box"><i class="fa fa-phone"></i></div>
+                                <div class="info_txt">
+                                    <h4>Phone</h4>
+                                    <p><%= @site.phone_number %></p>
+                                </div>
+                        </div>
+                        <div class="contact_info_inner">
+                                <div class="icon_box"><i class="fa fa-envelope"></i></div>
+                                <div class="info_txt">
+                                    <h4>Email</h4>
+                                    <p><a href="mailto:abcxyz@abc.com"><%= @site.email %></a></p>
+                                </div>
+                            
+                        </div>
+                        
+                        <div class="contact_info_inner">
+                           
+                                <div class="icon_box"><i class="fa fa-map-marker"></i></div>
+                                <div class="info_txt">
+                                    <h4>Address</h4>
+                                    <p><%=@site.address %></p>
+                                </div>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+                <!-- Contact Info End -->
                                     </div>
                                   <div class="info_wrapper">
                                       <div class="info_head">
@@ -505,13 +508,13 @@
                 <div class="aside_wrapper col-lg-3 col-md-4 col-sm-12 col-xs-12">
                   <!-- Course Category Start -->
                     <div class="hookup_wrap">
-                      <a href="#" class="btn hookup_btn">Request to Join Study! <i class="fa fa-reply"></i></a>
+                      <a href="#" class="btn hookup_btn">Hook up Course <i class="fa fa-reply"></i></a>
                         <ul>
-                          <li><span class="hookup_tag">NCTID</span><span class="hookup_duration"><%= @study.ctgid %></span></li>
-                          <li><span class="hookup_tag">Duration</span><i class="fa fa-clock-o"></i><span class="hookup_duration"><%=@study.duration %></span></li>
-                          <li><span class="hookup_tag">Condition</span><span class="hookup_duration"><%= @study.condition %></span></li>
-                          <li><span class="hookup_tag">Intervention</span><span class="hookup_duration"><%= @study.intervention %></span></li>
-                          <li><span class="hookup_tag">Compensation</span><span class="hookup_duration"><%= @study.compensation %></span></li>
+                          <li><span class="hookup_tag"><i class="fa fa-calendar-check-o"></i> Starts</span><span class="hookup_duration">Mar 17, 2016</span></li>
+                          <li><span class="hookup_tag"><i class="fa fa-clock-o"></i> Duration</span><span class="hookup_duration">2 Months, 6 hrs / week</span></li>
+                          <li><span class="hookup_tag"><i class="fa fa-users"></i> Seats Booked</span><span class="hookup_duration">43</span></li>
+                          <li><span class="hookup_tag"><i class="fa fa-user-times"></i> Seats Available</span><span class="hookup_duration">7</span></li>
+                          <li><span class="hookup_tag"><i class="fa fa-language"></i> Language</span><span class="hookup_duration">English</span></li>
                         </ul>
                     </div>
                     <!-- Course Category End -->
@@ -562,12 +565,12 @@
                     
                     <!-- Course Subscribe Start -->
                     <div class="course_subscribe">                      
-                      <h4>Request to Join Study!</h4>
+                      <h4>Inquire Now</h4>
                       <form method="post" action="#">
                           <input class="form-control" placeholder="Your Name..." name="name" type="text">
                             <input class="form-control" placeholder="Email Addrress..." name="email" type="text">
                             <textarea class="form-control" rows="7" placeholder="Message..." name="message"></textarea>
-                            <button type="submit" class="btn btn_subscribe">Submit <i class="fa fa-share"></i></button>
+                            <button type="submit" class="btn btn_subscribe">Send Message <i class="fa fa-share"></i></button>
                         </form>
                     </div>
                     <!-- Course Subscribe End -->

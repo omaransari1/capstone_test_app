@@ -1,3 +1,4 @@
+<div class="well">
 <h1>New Study</h1>
 <%= form_tag '/studies', method: :post do %>
   <div>
@@ -9,8 +10,25 @@
     <%= text_field_tag :condition %>
   </div>
   <div>
+    <%= label_tag :Description %>
+    <%= text_field_tag :description %>
+  </div>
+  <div>
+    <%= label_tag :Intervention %>
+    <%= text_field_tag :intervention %>
+  </div>
+  <div>
     <%= label_tag :Compensation %>
     <%= text_field_tag :compensation %>
   </div>
+  <div>
+    <%= label_tag :Duration %>
+    <%= text_field_tag :duration %>
+  </div>
+  <div>
+    <%= label_tag :NCTID %>
+    <%= text_field_tag :ctgid %>
+  </div>
   <%= submit_tag "Add Study" %>
 <% end %>
+</div>

@@ -18,13 +18,13 @@ Rails.application.routes.draw do
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
-  get '/logout' => 'sessions#destroy'
+  delete '/logout' => 'sessions#destroy'
 
   get '/researchers_signup' => 'researchers#new'
   post '/researchers' => 'researchers#create'
   get '/researchers_login' => 'researchers_sessions#new'
   post '/researchers_login' => 'researchers_sessions#create'
-  get '/researchers_logout' => 'researchers_sessions#destroy'
+  delete '/researchers_logout' => 'researchers_sessions#destroy'
 
   get '/user_studies' => 'user_studies#show'
   post '/user_studies' => 'user_studies#create'

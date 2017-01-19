@@ -12,7 +12,11 @@ class StudiesController < ApplicationController
     @study = Study.new(
       name: params["name"],
       condition: params["condition"],
-      compensation: params["compensation"])
+      description: params["description"],
+      intervention: params["intervention"],
+      duration: params["duration"],
+      compensation: params["compensation"],
+      ctgid: params["ctgid"])
     @study.save
 
     flash[:success] = "Study Successfully Created"

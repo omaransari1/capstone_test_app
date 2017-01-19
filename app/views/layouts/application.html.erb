@@ -52,25 +52,37 @@
 <body id="home" class="cms_index2">
   <div class="container">
       <% flash.each do |name, message| %>
+        <div class="alert alert-success" role="alert">
         <p> <%= message %> </p>
+        </div>
       <% end %> 
-    </div>
+  </div>
   <!-- Header Start -->
     <header>
         <!-- Top Header Start -->
         <div class="header_top">
             <div class="container">
                 <div class="top_info">
-                    <span>Have any question?</span>
+                    <span><% if current_user %>
+                              Welcome, <%= current_user.first_name %>!
+                          <% elsif current_researcher %>
+                              Welcome, <%= current_researcher.first_name %>!
+
+                              </span>
+                          <%end%>
                     <span class="cont_no">
                       <i class="fa fa-phone"></i> <a href="#">USA : + 1 800 123 1234</a>
                     </span>
                     <i class="fa fa-envelope"></i> <a href="mailto:abcxyz@abc.com">support@abcxyz.com</a>
                 </div>
                 <ul class="top_menu">
-                  <li class="special">Mon - Sat &nbsp;&nbsp;(9am - 5pm) &nbsp;&nbsp;&nbsp;&nbsp;</li>
-                    <li><a href="#">Register</a> /</li>
-                    <li><a href="#">Signup</a></li>
+                  <li class="special">Research Participants &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;</li>
+                  <% if current_user %>
+                    <%= link_to "Logout", "/logout", method: :delete %>
+                  <% else %>
+                    <li><a href="/signup">Register</a> /</li>
+                    <li><a href="/login">Login</a></li>
+                  <% end %>
                 </ul>
             </div>
         </div>
@@ -80,7 +92,7 @@
             <div class="container">
                 <div id="navbar" class="navbar navbar-default">
                     <div class="navbar-header col-md-2 col-sm-4 col-xs-4">
-                        <a class="navbar-brand trigger" href="index.html" title="LearnMate"><img alt="Logo" src="/images/quikkstudylogo.png"></a>
+                        <a class="navbar-brand trigger" href="/" title="LearnMate"><img alt="Logo" src="/images/quikkstudylogo.png"></a>
                     </div>
                     <div class="col-md-9 col-sm-7 col-xs-7 pull-xs-right">
                       <!-- Mobile Menu Start -->
@@ -91,7 +103,7 @@
                                     <h5 class="sp_module_title">LearnMate</h5>
                                 </li>
                                 <li>
-                                    <a href="#">Home</a>
+                                    <a href="/">Home</a>
                                     <ul class="dl-submenu">
                                         <li><a href="index.html">Home 1</a></li>
                                         <li><a href="index2.html">Home 2</a></li>
@@ -101,9 +113,9 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="#">Courses</a>
+                                    <a href="#">Studies</a>
                                     <ul class="dl-submenu">
-                                        <li><a href="course_grid.html">Course Grid</a></li>
+                                        <li><a href="/studies">All Studies</a></li>
                                         <li><a href="course_list.html">Course List</a></li>
                                         <li><a href="#">Course Single</a>
                                             <ul class="dl-submenu">
@@ -118,12 +130,16 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="#">Blog</a>
+                                    <a href="#">Researchers</a>
                                     <ul class="dl-submenu">
-                                        <li><a href="blog_right_sidebar.html">Blog - right sidebar</a></li>
-                                        <li><a href="blog_left_sidebar.html">Blog - left sidebar</a></li>
-                                        <li><a href="blog_dtl.html">Blog Single</a></li>
-                                        <li><a href="aboutus.html">About Us</a></li>
+                                    <% if current_researcher %>
+                                        <li><%= link_to "Logout", "/researchers_logout", method: :delete %></li>
+                                        <li><a href="/sites">Join A Site</a></li>
+                                        <li><a href="/studies/new">Post New Study</a></li>
+                                    <% else %>
+                                        <li><a href="/researchers_signup">Register</a></li>
+                                        <li><a href="/researchers_login">Login</a></li>
+                                    <% end %>
                                     </ul>
                                 </li>
                                 <li><a class="trigger" href="teachers.html">Teachers</a></li>
@@ -133,7 +149,7 @@
                         <!-- Mobile Menu End -->
                         <div class="main_menu_wrap">
                             <ul class="main_menu">
-                                <li><a class="trigger" href="#">Home <i class="fa fa-angle-down"></i></a>
+                                <li><a class="trigger" href="/">Home <i class="fa fa-angle-down"></i></a>
                                   <ul class="submenu">
                                       <li><a href="index.html">Home 1</a></li>
                                         <li><a href="index2.html">Home 2</a></li>
@@ -142,9 +158,9 @@
                                         <li><a href="index5.html">Home 5</a></li>
                                     </ul>                                
                                 </li>
-                                <li><a class="trigger" href="#">Courses <i class="fa fa-angle-down"></i></a>
+                                <li><a class="trigger" href="/studies">Studies <i class="fa fa-angle-down"></i></a>
                                   <ul class="submenu">
-                                      <li><a href="course_grid.html">Course Grid</a></li>
+                                      <li><a href="/studies">All studies</a></li>
                                       <li><a href="course_list.html">Course List</a></li>
                                       <li><a href="#">Course Single <i class="fa fa-angle-right"></i></a>
                                           <ul class="sub_menu">
@@ -158,15 +174,24 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li><a class="trigger" href="#">Blog <i class="fa fa-angle-down"></i></a>
+                                <li><a class="trigger" href="/sites">Research Sites<i class="fa fa-angle-down"></i></a>
                                   <ul class="submenu">
-                                      <li><a href="blog_right_sidebar.html">Blog - right sidebar</a></li>
-                                      <li><a href="blog_left_sidebar.html">Blog - left sidebar</a></li>
-                                      <li><a href="blog_dtl.html">Blog Single</a></li>
-                                        <li><a href="aboutus.html">About Us</a></li>
+                                      <li><a href="/sites">Site Listings</a></li>
+                                      <li><a href="index2.html">Home 2</a></li>
+                                  </ul>   
+                                </li>
+                                <li><a class="trigger" href="#">Research Staff<i class="fa fa-angle-down"></i></a>
+                                  <ul class="submenu">
+                                    <% if current_researcher %>
+                                      <li><%= link_to "Logout", "/researchers_logout", method: :delete %></li>
+                                      <li><a href="/sites">Join A Site</a></li>
+                                      <li><a href="/studies/new">Post New Study</a></li>
+                                    <% else %>
+                                      <li><a href="/researchers_signup">Register</a></li>
+                                      <li><a href="/researchers_login">Login</a></li>
+                                    <% end %>
                                     </ul>                               
                                 </li>
-                                <li><a class="trigger" href="teachers.html">Teachers</a></li>
                                 <li><a class="trigger" href="contact.html">Contact us</a></li>
                             </ul>
                         </div>
@@ -184,83 +209,7 @@
         <div class="container">
             <div class="row">
               <!-- Footer Link Wrapper Start -->
-                <div class="footer_link_wrapper">
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                        <ul class="footer_list">
-                            <li>
-                                <div class="footer_logo"><img alt="Footer Logo" src="/images/quikkstudylogo.png"></div>
-                                <div class="footer_txt"><p>The expert will give all the instructions in easy and compreensive way</p></div>
-                                <div class="footer_email"><i class="fa fa-envelope"></i> <a href="mailto:abcxyz@abc.com">support@abcxyz.com</a></div>
-                                <div class="footer_phone"><i class="fa fa-phone"></i> +1 800 123 1234</div>                            
-                                <div class="social_links">
-                                    <a href="#" target="_blank" rel="external nofollow" title="Share it"><i class="fa fa-facebook"></i></a>
-                                    <a href="#" target="_blank" rel="external nofollow" title="Tweet it"><i class="fa fa-twitter"></i></a>
-                                    <a href="#" target="_blank" rel="external nofollow" title="Linked it"><i class="fa fa-linkedin"></i></a>
-                                </div> 
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                        <ul class="footer_list">
-                            <li>
-                                <h3>Latest News</h3>
-                                <ul class="foot_letnews_list">
-                                    <li>
-                                        <div class="foot_letnews_img"><img alt="" src="/images/footer_news.jpg"></div>
-                                        <div class="foot_letnews_info">
-                                            <h4><a href="#">You'll hear a tale a tale of alorem epsumn dollare gupt animap</a></h4>
-                                            <em>Jan 23, 2016</em>
-                                        </div>
-                                     </li>
-                                    <li>
-                                        <div class="foot_letnews_img"><img alt="" src="/images/footer_news.jpg"></div>
-                                        <div class="foot_letnews_info">
-                                            <h4><a href="#">Here's the story of a named alorem epsumn dollare guptni</a></h4>
-                                            <em>Feb 17, 2016</em>
-                                        </div>
-                                     </li>
-                                    <li>
-                                        <div class="foot_letnews_img"><img alt="" src="/images/footer_news.jpg"></div>
-                                        <div class="foot_letnews_info">
-                                            <h4><a href="#">So get a witch's shawl on alorem epsumn dollare gupt</a></h4>
-                                            <em>Mar 25, 2016</em>
-                                        </div>
-                                     </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
-                        <ul class="footer_list">
-                            <li>
-                                <h3>Links</h3>
-                                <ul class="footer_sublist">
-                                    <li><a href="#" title="About">About</a></li>
-                                    <li><a href="#" title="Courses">Courses</a></li>
-                                    <li><a href="#" title="Blog">Blog</a></li>
-                                    <li><a href="#" title="Gallery">Gallery</a></li>
-                                    <li><a href="#" title="FAQ">FAQ</a></li>
-                                    <li><a href="#" title="Contact">Contact</a></li>
-                                    <li><a href="#" title="Become a Teacher">Become a Teacher</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 padd_rnone">
-                        <div class="foot_gallery">
-                          <h3>Event Gallery</h3>
-                            <div class="col-md-4 col-xs-3"><a href="blog_right_sidebar.html"><img alt="" src="/images/footer_img.jpg"></a></div>
-                            <div class="col-md-4 col-xs-3"><a href="blog_right_sidebar.html"><img alt="" src="/images/footer_img.jpg"></a></div>
-                            <div class="col-md-4 col-xs-3"><a href="blog_right_sidebar.html"><img alt="" src="/images/footer_img.jpg"></a></div>
-                            <div class="col-md-4 col-xs-3"><a href="blog_right_sidebar.html"><img alt="" src="/images/footer_img.jpg"></a></div>
-                            <div class="col-md-4 col-xs-3"><a href="blog_right_sidebar.html"><img alt="" src="/images/footer_img.jpg"></a></div>
-                            <div class="col-md-4 col-xs-3"><a href="blog_right_sidebar.html"><img alt="" src="/images/footer_img.jpg"></a></div>
-                            <div class="col-md-4 col-xs-3"><a href="blog_right_sidebar.html"><img alt="" src="/images/footer_img.jpg"></a></div>
-                            <div class="col-md-4 col-xs-3"><a href="blog_right_sidebar.html"><img alt="" src="/images/footer_img.jpg"></a></div>
-                            <div class="col-md-4 col-xs-3"><a href="blog_right_sidebar.html"><img alt="" src="/images/footer_img.jpg"></a></div>
-                        </div>
-                    </div>
-                </div>
+              
                 <!-- Footer Link Wrapper End -->                
             </div>            
         </div>
