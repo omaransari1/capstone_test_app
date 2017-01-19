@@ -505,7 +505,7 @@
                 <div class="aside_wrapper col-lg-3 col-md-4 col-sm-12 col-xs-12">
                   <!-- Course Category Start -->
                     <div class="hookup_wrap">
-                      <a href="#" class="btn hookup_btn">Request to Join Study! <i class="fa fa-reply"></i></a>
+                      <a href="#" class="btn hookup_btn">Study Overview </a> 
                         <ul>
                           <li><span class="hookup_tag">NCTID</span><span class="hookup_duration"><%= @study.ctgid %></span></li>
                           <li><span class="hookup_tag">Duration</span><i class="fa fa-clock-o"></i><span class="hookup_duration"><%=@study.duration %></span></li>
@@ -516,9 +516,22 @@
                     </div>
                     <!-- Course Category End -->
                     
+                    
+                    
+                    <!-- Course Subscribe Start -->
+                    <div class="course_subscribe">                      
+                      <h4>Request to Join Study!</h4>
+                      <form method="post" action="#">
+                          <input class="form-control" placeholder="Your Name..." name="name" type="text">
+                            <input class="form-control" placeholder="Email Addrress..." name="email" type="text">
+                            <textarea class="form-control" rows="7" placeholder="Message..." name="message"></textarea>
+                            <button type="submit" class="btn btn_subscribe">Submit <i class="fa fa-share"></i></button>
+                        </form>
+                    </div>
+                    <!-- Course Subscribe End -->
                     <!-- Course Events Start -->
                     <div class="course_tutor">
-                      <h4>Instructors</h4>                        
+                      <h4>Sites Conducting Study</h4>                        
                         <ul>
                           <li>
                               <div class="tutor_img">
@@ -559,19 +572,6 @@
                         </ul>
                     </div>
                     <!-- Course Events End -->
-                    
-                    <!-- Course Subscribe Start -->
-                    <div class="course_subscribe">                      
-                      <h4>Request to Join Study!</h4>
-                      <form method="post" action="#">
-                          <input class="form-control" placeholder="Your Name..." name="name" type="text">
-                            <input class="form-control" placeholder="Email Addrress..." name="email" type="text">
-                            <textarea class="form-control" rows="7" placeholder="Message..." name="message"></textarea>
-                            <button type="submit" class="btn btn_subscribe">Submit <i class="fa fa-share"></i></button>
-                        </form>
-                    </div>
-                    <!-- Course Subscribe End -->
-                    
                     <!-- Tags Start -->
                     <div class="course_tags">
                       <h4>Tags</h4>
