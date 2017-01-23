@@ -9,4 +9,9 @@ class SitesController < ApplicationController
     render 'show.html.erb'
   end
 
+  def requests
+    @user_sites = UserSite.where(site_id: params[:id])
+    render 'requests.html.erb'
+  end
+
 end

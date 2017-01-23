@@ -1,0 +1,29 @@
+<table border="1">
+  <tr>
+    <th>Research Subject Requests</th>
+  </tr>
+  <tr>
+    <td></td>
+    <td>Request date</td>
+    <td>Name</td>
+    <td>Phone number</td>
+    <td>E-mail</td>
+    <td>Profile</td>
+    <td>Study Requested</td>
+    <td>Status</td>
+    <td></td>
+  </tr>
+  <%= @user_sites.each do |user_site| %>
+  <tr>
+    <td></td>
+    <td></td>
+    <td><%= user_site.user.first_name %> <%= user_site.user.last_name %></td>
+    <td><%= user_site.user.phone_number %></td>
+    <td><%= user_site.user.email %></td>
+    <td><a href="/profiles/">Click for profile </a></td>
+    <td>Study Requested</td>
+    <td>Status</td>
+    <td></td>
+  </tr>
+  <%end%>
+</table>

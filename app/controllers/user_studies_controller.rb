@@ -11,6 +11,9 @@ class UserStudiesController < ApplicationController
       study_id: params[:study_id],
       accepted: false
       )
+    @user_site = UserSite.new(
+      user_id: current_user.id,
+      site_id: )
 
     flash[:success] = "Study Successfully Joined"
     redirect_to "/user_studies"

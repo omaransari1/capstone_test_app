@@ -48,13 +48,21 @@
                         <div class="dtl_inner last">
                             <div class="dtl_head">
                                 <h1><%= @study.name %></h1>
+                                <% if current_researcher %>
+                                    <%= form_tag '/researchers_addstudytosite', method: :post do %>
+                                    <div>
+                                        <%= hidden_field_tag :study_id, @study.id %>
+                                    </div>
+                                        <%= submit_tag "Add Study to Your Site"%>
+                                    <%end%>
+                                <% end %>
                                 <div class="dtl_meta_info">
                                     <p></p>
                                 </div>
                             </div>
                             <div class="dtl_block">
                                 <div class="dtl_img">
-                                    <img alt="Blog Image" src="<%=@study.image %>">
+                                    <img alt="Blog Image" src="<%=@study.image %>" onerror="if (this.src != 'error.jpg') this.src = '/images/quikkstudylogo.png';">
                                 </div>
                                 <div class="detail_text_wrap">
                                   <div class="info_wrapper">
@@ -519,56 +527,42 @@
                     
                     
                     <!-- Course Subscribe Start -->
+                    <% if current_user %>
                     <div class="course_subscribe">                      
                       <h4>Request to Join Study!</h4>
-                      <form method="post" action="#">
-                          <input class="form-control" placeholder="Your Name..." name="name" type="text">
-                            <input class="form-control" placeholder="Email Addrress..." name="email" type="text">
-                            <textarea class="form-control" rows="7" placeholder="Message..." name="message"></textarea>
+                        <!-- <form method="post" action="/users_joinstudy">
+                            <input type="hidden" value="<%=@study.id%> name="study_id">
                             <button type="submit" class="btn btn_subscribe">Submit <i class="fa fa-share"></i></button>
-                        </form>
+                        </form> -->
+                      <%= form_tag '/users_joinstudy', method: :post do %>
+                        <div>
+                            <%= hidden_field_tag :study_id, @study.id %>
+                        </div>
+                            <%= submit_tag "Submit" %>
+                      <%end%>
                     </div>
+                    <%end%>
                     <!-- Course Subscribe End -->
                     <!-- Course Events Start -->
                     <div class="course_tutor">
                       <h4>Sites Conducting Study</h4>                        
                         <ul>
+                          <% @site_studies.each do |site_study| %>
                           <li>
+
                               <div class="tutor_img">
                                   <img alt="Leonardo Bonucci" src="images/faculty_s.jpg">
                                 </div>
                                 <div class="tutor_info">
                                   <h5>
-                                      <a href="#">Leonardo Bonucci</a>
-                                        <em>- (P.hd)</em>
+                                      <a href="#"><%=site_study.site.name%></a>
                                     </h5>
-                                    <p>Chemistry, Physicss, Math.</p>
+                                    <p><%= site_study.site.address%></p>
                                 </div>
                             </li>
-                          <li>
-                              <div class="tutor_img">
-                                  <img alt="Rebeca Addam" src="images/faculty_s.jpg">
-                                </div>
-                                <div class="tutor_info">
-                                  <h5>
-                                      <a href="#">Rebeca Adda</a>
-                                        <em>- (P.hd)</em>
-                                    </h5>
-                                    <p>Chemistry, Physics.</p>
-                                </div>
-                            </li>
-                          <li>
-                              <div class="tutor_img">
-                                  <img alt="Alaxander Louise" src="images/faculty_s.jpg">
-                                </div>
-                                <div class="tutor_info">
-                                  <h5>
-                                      <a href="#">Alaxander Louise</a>
-                                        <em>- (P.hd)</em>
-                                    </h5>
-                                    <p>Chemistry, Physics, Math.</p>
-                                </div>
-                            </li>
+                            <%end%>
+                          
+                          
                         </ul>
                     </div>
                     <!-- Course Events End -->

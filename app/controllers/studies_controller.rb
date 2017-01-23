@@ -19,13 +19,19 @@ class StudiesController < ApplicationController
       ctgid: params["ctgid"])
     @study.save
 
+    @site_study = SiteStudy.create(
+      site_id: current_researcher.site_id,
+      study_id: @study.id)
+
     flash[:success] = "Study Successfully Created"
     redirect_to "/studies/#{@study.id}"
   end
 
   def show
     @study = Study.find_by(id: params[:id])
+    @site_studies = SiteStudy.where(study_id: @study.id)
     render 'show.html.erb'
+
   end
 
   def edit

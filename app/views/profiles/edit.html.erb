@@ -1,0 +1,33 @@
+<div class="well">
+  <h1>Edit Profile</h1>
+  <%= form_tag "/profiles/#{@profile.id}", method: :patch do %>
+    <div>
+      <%= label_tag :Age %>
+      <%= text_field_tag :age, @profile.age %>
+    </div>
+    <div>
+      <%= label_tag :Height %>
+      <%= text_field_tag :height, @profile.height %>
+    </div>
+    <div>
+      <%= label_tag :Weight %>
+      <%= text_field_tag :weight, @profile.weight %>
+    </div>
+    <div>
+      <%= label_tag :Medical_Conditions %>
+      <%= text_field_tag :diagnoses, @profile.diagnoses %>
+    </div>
+    <div>
+      <%= label_tag :Medications %>
+      <%= text_field_tag :medications, @profile.medications %>
+    </div>
+    <div>
+      <%= label_tag :Substance_Use_History%>
+      <%= text_field_tag :substancehx, @profile.substancehx %>
+    </div>
+    <div>
+      <%= hidden_field_tag :user_id, current_user.id %>
+    </div> 
+    <%= submit_tag "Edit Profile" %>
+  <% end %>
+</div>
