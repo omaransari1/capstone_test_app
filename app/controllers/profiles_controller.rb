@@ -24,6 +24,8 @@ class ProfilesController < ApplicationController
     else 
       @profile = Profile.find_by(id: params[:id])
     end
+
+    @user = User.find_by(id: @profile.user_id)
     render 'show.html.erb'
   end
 

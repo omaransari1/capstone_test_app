@@ -36,41 +36,38 @@
               <!-- Course Wrapper Start -->
                 <div class="course_wrapp col-lg-9 col-md-8 col-sm-12 col-xs-12">
                     <!-- Courses Top Search Start -->
+             
+                    <!-- Courses Top Search End -->
                     <div class="course_to_search_wrapp">
                         <div class="col-md-12 col-sm-12 col-xs-12">
                           <div class="course_to_search_inner">
-                                <div class="course_to_search">
-                                    <div class="course_swicher">
-                                        <a class="fa fa-th-large" title="Grid Layout" href="course_grid.html"></a>
-                                        <a class="fa fa-th-list active" title="List Layout" href="course_list.html"></a>
-                                    </div>
-                                    <div class="search_pannel">
-                                        <form method="post" action="#">
-                                            <select class="selectpicker">
-                                                <option>All Categories</option>
-                                                <option>Science</option>
-                                                <option>Account</option>
-                                                <option>Business</option>
-                                                <option>Psychology</option>
-                                                <option>Food</option>
-                                                <option>Art</option>
-                                            </select>
-                                            <select class="selectpicker">
-                                                <option>Price</option>
-                                                <option>$70</option>
-                                                <option>$77</option>
-                                                <option>$90</option>
-                                                <option>$95</option>
-                                                <option>$100</option>
-                                                <option>$110</option>
-                                            </select>
-                                        </form>
-                                    </div>
-                                </div>
+                            <div class="course_to_search">
+                              <div class="panel panel-primary">
+  <!-- Default panel contents -->
+                                  <div class="panel-heading" style="text-align:center" style="font-weight: bold">Study Request Status</div>
+                                  <div class="panel-body">
+                                    <p>... </p>
+                                  </div>
+
+                                 <table class="table">
+                                    <tr>
+                                      <td>Study</td> 
+                                      <td>Site</td> 
+                                      <td>Status</td>
+                                    </tr>
+                                   <% @user_requests.each do |user_request| %>
+                                    <tr>
+                                      <td><%= user_request.user_study.study.name %></td> 
+                                      <td><%= user_request.site_study.site.name %></td> 
+                                      <td><%= user_request.status %></td>
+                                    </tr>
+                                   <%end%>
+                                </table>
                             </div>
+                          </div>
                         </div>
                     </div>
-                    <!-- Courses Top Search End -->
+                  </div>
                     
                     <!-- Courses Wrapper Start -->
                   
@@ -94,7 +91,7 @@
                                             Duration: <span><%= user_study.study.duration %></span>
                                         </div>
                                         <div class="course_price">
-                                            Compensation: <span><%= user_study.study.compensation %></span>
+                                            Compensation: <span>$<%= user_study.study.compensation %></span>
                                         </div>
                                     </div>
                                 </div>

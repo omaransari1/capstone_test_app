@@ -10,8 +10,11 @@ class SitesController < ApplicationController
   end
 
   def requests
-    @user_sites = UserSite.where(site_id: params[:id])
+    @site_requests = Request.joins(:site_study).where(site_studies: {site_id: params[:id]})
+
+    @site = Site.find_by(id: params[:id])
     render 'requests.html.erb'
+
   end
 
 end

@@ -27,11 +27,22 @@ class UsersController < ApplicationController
       study_id: params[:study_id],
       accepted: false
       )
-    @user_site = UserSite.new(
-      user_id: current_user.id,
-      site_id: )
+    @site_studies = SiteStudy.where(study_id: params[:study_id])
+    @site_studies.each do |site_study|
+      @request = Request.create(
+        user_study_id: @user_study.id,
+        site_study_id: site_study.id,
+        status: "PENDING"
+        )
+    end
+    # @site_study = SiteStudy.where(study_id: params[:study_id])
+    # @site_studies.each do |site_study|
+    #   @user_site = UserSite.create(
+    #   user_id: current_user.id,
+    #   site_id: site_study.site_id)
+    #end
 
-    flash[:success] = "Study Successfully Joined"
+    flash[:success] = "Study Requested"
     redirect_to "/user_studies"
   end
 end

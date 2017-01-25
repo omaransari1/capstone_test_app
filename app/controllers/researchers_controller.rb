@@ -32,6 +32,9 @@ class ResearchersController < ApplicationController
   def addstudytosite
     @site_study = SiteStudy.create(
       site_id: current_researcher.site_id,
-      study_id: @study.id)
+      study_id: params[:study_id])
+
+    flash[:success] = 'Study added successfully!'
+    redirect_to "/sites/#{params[:site_id]}"
   end
 end

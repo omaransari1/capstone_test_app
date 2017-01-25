@@ -14,80 +14,60 @@
         <!-- Breadscrumb Start -->
         
         <!-- Detail Wrap Start -->
-        <div id="dtl_wrap" class="dtl_wrap">
+        <!-- <div id="dtl_wrap" class="dtl_wrap">
             <div class="container">
                 <!-- Detail Wrapper Start -->
-                <div class="dtl_wrapper col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <!-- <div class="dtl_wrapper col-lg-12 col-md-12 col-sm-12 col-xs-12">
                   <div class="txt_inner_wrap">
                       <!-- Dtl Inner Start -->
-                        <div class="detail_text_wrap">
-                        <h4>Age</h4>
-                          <p><%= @profile.age %>
-                              
-                            </p>
-                        <h4>Height</h4>
-                            <p><%= @profile.height %>                     
-                            </p>
-                        <h4>Weight</h4>
-                            <p><%= @profile.weight %>
-                              
-                            </p>
-                        <h4>Medical Conditions</h4>
-                            <p><%= @profile.diagnoses %>
-                                
-                                
-                            </p>
-                        <h4>Medications</h4>
-                            <p> <%= @profile.medications %>
-                                
-                            </p>
-                        <h4>Substance Use history</h4>
-                            <p><%= @profile.substancehx %>
-                               
-                            </p>
-                            <p>
-                                
-                            </p>
-                            <p>
-                                
-                            </p>
-                            <p>
-                                
-                            </p>
-                            <p>
-                                
-                            </p>
-                            <p>
-                                
-                            </p>
-                            <p>
-                                
-                            </p>
-                            
-                            <p>
-                                
-                            </p>
-                            <p>
-                                
-                            </p>
-                            
-                            <p>
-                                
-                            </p>
-                            
-                            <p>
-                                
-                            </p>
-                            
-                        </div>
+                       <!--  <div class="detail_text_wrap">
+                        
+                        </div> -->
                         <!-- Dtl Inner End -->                    
-                    </div>
+                    <!-- </div>
                     
-                </div>
+                </div>  -->
                 <!-- Detail Wrapper End -->
                 
-            </div>
-        </div>
+           <!--  </div>
+        </div> --> 
         <!-- Detail Wrap End -->
         
     </div>
+
+    <div class="well">
+<div class="panel panel-primary">
+  <!-- Default panel contents -->
+  <div class="panel-heading" style="text-align:center" style="font-weight: bold">Subject Profile</div>
+  <div class="panel-body">
+    <p>Name: <%=@user.first_name%> <%=@user.last_name%></p>
+    <p>E-mail: <%=@user.email%></p>
+  </div>
+
+<table class="table">
+  <tr>
+    <td>Age</td>  
+    <td><%= @profile.age %></td>
+  </tr>
+  <tr>
+    <td>Height</td>  
+    <td><%= @profile.height %></td>
+  </tr>
+  <tr>
+    <td>Weight</td>  
+    <td><%= @profile.weight %></td>
+  </tr>
+  <tr>
+    <td>Medical Conditions</td>  
+    <td><%= @profile.diagnoses %></td>
+  </tr>
+  <tr>
+    <td>Medications</td>  
+    <td><%= @profile.medications %></td>
+  </tr>
+  <tr>
+    <td>Substance Use History</td>  
+    <td><%= @profile.substancehx %></td>
+  </tr>
+</table>
+</div>

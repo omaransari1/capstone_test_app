@@ -49,13 +49,7 @@
 </head>
 
 <body id="home" class="cms_index2">
-  <div class="container">
-      <% flash.each do |name, message| %>
-        <div class="alert alert-success" role="alert">
-        <p> <%= message %> </p>
-        </div>
-      <% end %> 
-  </div>
+  
   <!-- Header Start -->
     <header>
         <!-- Top Header Start -->
@@ -121,6 +115,7 @@
                                       <li><%= link_to "Logout", "/researchers_logout", method: :delete %></li>
                                       <li><a href="/sites">Find Your Site</a></li>
                                       <li><a href="/studies/new">Post New Study</a></li>
+                                      <li><a href="/sites/<%=current_researcher.site_id%>/requests">Participant Requests</a></li>
                                     <% else %>
                                       <li><a href="/researchers_signup">Register</a></li>
                                       <li><a href="/researchers_login">Login</a></li>
@@ -143,10 +138,16 @@
                     </div>
                 </div>
             </div>
-        </nav>
+      </nav>
     </header>
     <!-- Header End -->
-    
+    <div class="container">
+      <% flash.each do |name, message| %>
+        <div class="alert alert-success" role="alert">
+        <p> <%= message %> </p>
+        </div>
+      <% end %> 
+    </div>
     <%= yield %> 
     
     <!-- Footer Start -->

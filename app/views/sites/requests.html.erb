@@ -1,29 +1,62 @@
-<table border="1">
+<div class="content_wrapper">
+      <!-- Breadscrumb Start -->
+        <div class="breadcrumb_wrap" data-stellar-background-ratio="0.3" style="background: url(images/bg_img.jpg); background-attachment: fixed; background-position: 50% 50%;">
+          <div class="breadcrumb_wrap_inner">
+              <div class="container">
+                <h1>Requests</h1>
+                    <ul class="breadcrumbs">
+                      <li><a href="/">Home</a> /</li>
+                      <li>Requests</li>
+                    </ul>
+              </div>
+            </div>
+        </div>
+<div class="well">
+<div class="panel panel-primary">
+  <!-- Default panel contents -->
+  <div class="panel-heading" style="text-align:center" style="font-weight: bold">Research Subject Requests</div>
+  <div class="panel-body">
+    <p>Site: <%=@site.name%></p>
+  </div>
+
+<table class="table">
   <tr>
-    <th>Research Subject Requests</th>
+    <th colspan="8" style="font-weight: bold">Subject Enrollment Quota</th>
   </tr>
   <tr>
-    <td></td>
-    <td>Request date</td>
+    <th colspan="8">
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: 2%;">
+          2%
+        </div>
+      </div>
+      </th>
+  </tr>
+  <tr>
+    <td>#</td>
+    <td>Request Date/Time</td>
     <td>Name</td>
-    <td>Phone number</td>
     <td>E-mail</td>
     <td>Profile</td>
     <td>Study Requested</td>
     <td>Status</td>
     <td></td>
   </tr>
-  <%= @user_sites.each do |user_site| %>
+  <% count = 0 %>
+  <% @site_requests.each do |site_request| %>
+  <% count += 1 %>
   <tr>
-    <td></td>
-    <td></td>
-    <td><%= user_site.user.first_name %> <%= user_site.user.last_name %></td>
-    <td><%= user_site.user.phone_number %></td>
-    <td><%= user_site.user.email %></td>
-    <td><a href="/profiles/">Click for profile </a></td>
-    <td>Study Requested</td>
-    <td>Status</td>
+    <td><%=count%></td>
+    <td><%=site_request.friendly_created_at %></td>
+    <td><%= site_request.user_study.user.first_name %> <%= site_request.user_study.user.last_name %></td>
+    <td><%= site_request.user_study.user.email %></td>
+    <% @profile = Profile.find_by(user_id: site_request.user_study.user_id) %>
+    <td><a href="/profiles/<%=@profile.id%>">Click for profile </a></td>
+    <td><%=site_request.user_study.study.name %></td>
+    <td><%= site_request.status %></td>
     <td></td>
   </tr>
   <%end%>
 </table>
+</div>
+</div>
