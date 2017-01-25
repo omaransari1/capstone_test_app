@@ -40,7 +40,7 @@
     <td>Profile</td>
     <td>Study Requested</td>
     <td>Status</td>
-    <td></td>
+    <td>Change Status</td>
   </tr>
   <% count = 0 %>
   <% @site_requests.each do |site_request| %>
@@ -54,7 +54,15 @@
     <td><a href="/profiles/<%=@profile.id%>">Click for profile </a></td>
     <td><%=site_request.user_study.study.name %></td>
     <td><%= site_request.status %></td>
-    <td></td>
+    <td>
+      <select name="post[category_id]" id="post_category_id">
+        <option value="1" >PENDING</option>
+        <option value="2" >ACCEPTED</option>
+        <option value="3">NOT ELIGIBLE</option>
+        <option value="4">WITHDRAWN</option>
+        <option value="5">COMPLETED</option>
+      </select>     
+    </td>
   </tr>
   <%end%>
 </table>
