@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'sites' => 'sites#index'
   get 'sites/:id' => 'sites#show'
   get 'sites/:id/requests' => 'sites#requests'
+  patch 'requests' => 'sites#update_request_status'
 
   get '/signup' => 'users#new'
   post '/users' => 'users#create'

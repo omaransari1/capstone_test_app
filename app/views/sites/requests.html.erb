@@ -55,13 +55,20 @@
     <td><%=site_request.user_study.study.name %></td>
     <td><%= site_request.status %></td>
     <td>
-      <select name="post[category_id]" id="post_category_id">
-        <option value="1" >PENDING</option>
-        <option value="2" >ACCEPTED</option>
-        <option value="3">NOT ELIGIBLE</option>
-        <option value="4">WITHDRAWN</option>
-        <option value="5">COMPLETED</option>
-      </select>     
+      <%= form_tag "/requests", method: :patch do  %>
+        <select name="status">
+          <option >Select</option>
+          <option value='PENDING'>PENDING</option>
+          <option value='ACCEPTED'>ACCEPTED</option>
+          <option value='NOT ELIGIBLE'>NOT ELIGIBLE</option>
+          <option value='WITHDRAWN'>WITHDRAWN</option>
+          <option value='COMPLETED'>COMPLETED</option>
+        </select>
+        <div>
+          <%= hidden_field_tag :request_id, site_request.id %>
+        </div>
+        <%= submit_tag "Submit" %> 
+      <%end%>  
     </td>
   </tr>
   <%end%>

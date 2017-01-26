@@ -17,4 +17,14 @@ class SitesController < ApplicationController
 
   end
 
+  def update_request_status
+    @request = Request.find_by(id: params[:request_id])
+    @request.status = params[:status]
+    @request.save
+    @site_id = @request.site_study.site_id
+
+    flash[:success] = "Status Successfully Updated"
+    redirect_to "/sites/#{@site_id}/requests"
+  end
+
 end
