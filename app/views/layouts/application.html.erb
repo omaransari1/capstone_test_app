@@ -128,11 +128,15 @@
                                 <%end%>
                               <% if current_user %>
                               <% @profile = Profile.find_by(user_id: current_user.id) %>
-                                <li><a class="trigger" href="/profiles/<%= @profile.id %>">Profile <i class="fa fa-angle-down"></i></a>
+                                <li><a class="trigger" href="#">Profile<i class="fa fa-angle-down"></i></a>
                                     <ul class="submenu">
+                                    <%if @profile %>
                                     <li><a href="/profiles/<%= @profile.id %>">My Profile</a></li>
+                                    <%end%>
                                     <li><a href="/profiles/new">Create a Profile</a></li>
-                                    <li><a href="/profiles/<%= @profile.id %>/edit">Edit Profile</a></li>                                 
+                                    <% if @profile %>
+                                    <li><a href="/profiles/<%= @profile.id %>/edit">Edit Profile</a></li>
+                                    <%end%>                                 
                                 </ul>
                                 </li>
                               <%end%>
@@ -155,30 +159,7 @@
     <%= yield %> 
     
     <!-- Footer Start -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-              <!-- Footer Link Wrapper Start -->
-              
-                <!-- Footer Link Wrapper End -->                
-            </div>            
-        </div>
-        <div class="copyright">
-          <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 coppyright_txt"> &copy; 2016. All Rights Reserved. Designed by <a href="http://www.pixxett.com/" target="_blank">Pixxett.com</a> </div>
-                    <div class="time_available col-lg-3 col-md-3 col-sm-6 col-xs-6"><i class="fa fa-clock-o"></i> Mon - Sat &nbsp;&nbsp;(9am - 5pm) &nbsp;&nbsp;&nbsp;&nbsp;</div>
-                    <div class="social col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                        <ul class="pull-right">
-                            <li><a href="#">Sitemap</a></li>
-                            <li><a href="#">Terms</a></li>
-                            <li><a href="#">Privacy</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    
     <!-- Footer End -->
     
     <!-- Offcanvas Menu Start -->
@@ -210,5 +191,15 @@
     <script type="text/javascript" src="/js/js-functions.js"></script>
     <script type="text/javascript" src="/js/flicker.js"></script>
     <script type="text/javascript" src="/js/rev_slider.js"></script> 
+    <script src="https://cdn.jsdelivr.net/jquery.typeit/4.3.0/typeit.min.js"></script>
+
+   <script> $('#example2').typeIt({
+     strings: ["Connecting", "Subjects", "And", "Researchers"],
+     speed: 50,
+     breakLines: false,
+     autoStart: false
+      });
+  </script>
+    
 </body>
 </html>

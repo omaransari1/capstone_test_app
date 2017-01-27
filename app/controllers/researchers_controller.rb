@@ -35,6 +35,6 @@ class ResearchersController < ApplicationController
       study_id: params[:study_id])
 
     flash[:success] = 'Study added successfully!'
-    redirect_to "/sites/#{params[:site_id]}"
+    redirect_to "/studies"
   end
 end

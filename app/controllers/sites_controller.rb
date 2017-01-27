@@ -13,6 +13,7 @@ class SitesController < ApplicationController
     @site_requests = Request.joins(:site_study).where(site_studies: {site_id: params[:id]})
 
     @site = Site.find_by(id: params[:id])
+    @site_percent = 100 * ( @site_requests.where(status: 'ACCEPTED').length / 20.0)
     render 'requests.html.erb'
 
   end
