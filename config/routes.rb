@@ -35,9 +35,15 @@ Rails.application.routes.draw do
   post '/user_studies' => 'user_studies#create'
 
   get '/profiles/new' => 'profiles#new'
-  post 'profiles' => 'profiles#create'
+  post '/profiles' => 'profiles#create'
   get '/profiles/:id' => 'profiles#show'
   get '/profiles/:id/edit' => 'profiles#edit'
   patch '/profiles/:id' => 'profiles#update'
   delete '/profiles/:id' => 'profiles#destroy'
+
+  namespace :api do
+    namespace :v1 do
+      get '/studies' => 'studies#index'
+    end
+  end
 end

@@ -12,7 +12,9 @@
         </div>
       </div>
     <% end %> -->
-    
+    <div ng-app="app">
+        <div ng-controller="studiesCtrl" ng-init="setup()">
+      
     <!-- Content Wrapper Start -->
     <div class="content_wrapper">
       <!-- Blog Breadscrumb Start -->
@@ -37,7 +39,7 @@
               <!-- Course Wrapper Start -->
                 <div class="course_wrapp col-lg-9 col-md-8 col-sm-12 col-xs-12">
                     <!-- Courses Top Search Start -->
-                    <div class="course_to_search_wrapp">
+                    <!-- <div class="course_to_search_wrapp">
                         <div class="col-md-12 col-sm-12 col-xs-12">
                           <div class="course_to_search_inner">
                                 <div class="course_to_search">
@@ -51,37 +53,38 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- Courses Top Search End -->
                     
                     <!-- Courses Wrapper Start -->
-                   <% @studies.each do |study| %>
+                   <div ng-repeat="study in studies">
                     <div class="wrapper_course">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="course_block">
                                 <div class="img_wrap">
-                                    <img class="sizeadjust" src="<%= study.image %>" onerror="if (this.src != 'error.jpg') this.src = '/images/quikkstudylogo.png';">
-                                    <div class="course_img_hoverlay_btn"><a href="/studies/<%=study.id%>" title="View More" class="fa fa-eye"></a></div>
-                                    <h4><%= study.condition %> </h4>
+                                    <img class="sizeadjust" src="{{ study.image }}" onerror="if (this.src != 'error.jpg') this.src = '/images/quikkstudylogo.png';">
+                                    <div class="course_img_hoverlay_btn"><a href="/studies/{{study.id}}" title="View More" class="fa fa-eye"></a></div>
+                                    <h4>{{ study.condition }} </h4>
                                 </div>
                                 <div class="info_wrap">
                                     <div class="science">
                                         <div class="course_info">
-                                            <p><%= study.description %></p>
+                                            <p>{{ study.description }}</p>
                                         </div>
                                     </div>
                                     <div class="science course_count_wrap">
                                         <div class="course_count">
-                                            Duration: <span><%= study.duration %></span>
+                                            Duration: <span>{{ study.duration }}</span>
                                         </div>
                                         <div class="course_price">
-                                            Compensation: <span>$<%= study.compensation %></span>
+                                            Compensation: <span>${{ study.compensation }}</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <%end%>
+                    </div>
+                    </div>
                         
                     <!-- Courses Wrapper End -->
                     
@@ -116,6 +119,8 @@
     <!-- Offcanvas Menu Start -->
     <div class="offcanvas_overlay"></div>
     <!-- Offcanvas Menu End -->
+  </div>
+</div>
     
     <!-- JavaScript -->        
         <script type="text/javascript" src="/js/jquery-3.1.0.min.js"></script>
