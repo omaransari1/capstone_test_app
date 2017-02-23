@@ -50,7 +50,10 @@
                           <input class="form-control" placeholder="Search by condition" name="s" type="text">
                             <button type="submit" class="btn btn_search"><i class="fa fa-search"></i></button>
                         </form> -->
-                    </div>
+                                    </div>
+                                    <div>
+                                      <button ng-click="changeOrderAttribute('compensation')">Order by Compensation</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -58,7 +61,7 @@
                     <!-- Courses Top Search End -->
                     
                     <!-- Courses Wrapper Start -->
-                   <div ng-repeat="study in studies | filter: {condition: nameFilter}">
+                   <div ng-repeat="study in studies | filter: {condition: nameFilter} | orderBy:orderAttribute:isOrderDescending">
                     <div class="wrapper_course">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="course_block">
