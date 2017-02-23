@@ -20,6 +20,18 @@
       $scope.orderAttribute = inputAttribute;
     };
 
+    $scope.getSortIcon = function(inputAttribute) {
+      if (inputAttribute === $scope.orderAttribute) {
+        if ($scope.isOrderDescending) {
+          return '\u2193';
+        } else {
+          return '\u2191';
+        }
+      } else {
+        return '';
+      }
+    };
+
 
   });
 })();
