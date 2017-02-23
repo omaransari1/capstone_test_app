@@ -45,7 +45,10 @@
                                 <div class="course_to_search">
                                     
                                     <div class="search_course">
-                            <input ng-model="nameFilter" placeholder="Filter by condition">
+                            <input ng-model="nameFilter" placeholder="Filter by condition" list="conditions">
+                            <datalist id="conditions">
+                              <option ng-repeat="study in studies">{{ study.condition }}</option>  
+                            </datalist>
                       <!-- <form method="post" action="#">
                           <input class="form-control" placeholder="Search by condition" name="s" type="text">
                             <button type="submit" class="btn btn_search"><i class="fa fa-search"></i></button>
