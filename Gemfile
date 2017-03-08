@@ -29,6 +29,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'faker'
 gem 'seed_dump'
 
+gem 'ngannotate-rails'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
