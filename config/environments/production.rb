@@ -1,6 +1,8 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  NG_FORCE=true RAILS_ENV=development bundle exec rake assets:clobber assets:precompile
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
