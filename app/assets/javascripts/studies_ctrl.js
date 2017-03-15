@@ -1,7 +1,7 @@
 /* global angular */
 
 (function() {
-  angular.module("app").controller("studiesCtrl", function($scope, $http) {
+  angular.module("app").controller("studiesCtrl", ["$scope", "$http", function($scope, $http) {
     $scope.setup = function() {
       $http.get('/api/v1/studies').then(function(response) {
         $scope.studies = response.data;
@@ -33,5 +33,5 @@
     };
 
 
-  });
+  }]);
 })();
