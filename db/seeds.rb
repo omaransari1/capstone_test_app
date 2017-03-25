@@ -1,6 +1,6 @@
 Profile.create!([
   {age: "32", height: "5'9''", weight: "165 lb", diagnoses: "Asthma, Hypertension, Type 2 Diabetes, ADHD, Obstructive Sleep apnea", medications: "Albuterol, Hydrochlorothiazide, Metformin, Ritalin", substancehx: "Tobacco 1 pack/day for 10 years", user_id: 1},
-  {age: "28", height: "6'1\"", weight: "220 lb", diagnoses: "Chronic low back pain, Asthma, Bipolar disorder, Insomnia", medications: "Percocet, Albuterol inhaler, Salmeterol, Depakote ER, Risperidone, Melatonin", substancehx: "Tobacco 1.5 packs/ day for 8 years, Marijuana 2x/week for 5 years", user_id: 10}
+  {age: "28", height: "6'1\"", weight: "220 lb", diagnoses: "Chronic low back pain, Asthma, Bipolar disorder, Insomnia", medications: "Percocet, Albuterol inhaler, Salmeterol, Depakote ER, Risperidone, Melatonin", substancehx: "Tobacco 1.5 packs/ day for 8 years, Marijuana 2x/week for 5 years", user_id: 2}
 ])
 Request.create!([
 
