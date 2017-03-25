@@ -3,11 +3,7 @@ Profile.create!([
   {age: "28", height: "6'1\"", weight: "220 lb", diagnoses: "Chronic low back pain, Asthma, Bipolar disorder, Insomnia", medications: "Percocet, Albuterol inhaler, Salmeterol, Depakote ER, Risperidone, Melatonin", substancehx: "Tobacco 1.5 packs/ day for 8 years, Marijuana 2x/week for 5 years", user_id: 10}
 ])
 Request.create!([
-  {user_study_id: 6, site_study_id: 2, status: "PENDING"},
-  {user_study_id: 6, site_study_id: 1, status: "ACCEPTED"},
-  {user_study_id: 11, site_study_id: 4, status: "PENDING"},
-  {user_study_id: 12, site_study_id: 25, status: "PENDING"},
-  {user_study_id: 12, site_study_id: 9, status: "ACCEPTED"}
+
 ])
 Researcher.create!([
   {first_name: "Sarah", last_name: "Jones", email: "sjones@gmail.com", password_digest: "$2a$10$eZM5YSyf/KhKaqR2nq7PWecmDNY/HWAdeGRvDNWO.BjrcpxByIeei", site_id: 6},
@@ -95,21 +91,8 @@ User.create!([
   {first_name: "John", last_name: "Subject", email: "jsubject@gmail.com", password_digest: "$2a$10$qZDb6lFyRfRbqScqF1tyneEw5kkhEirjDapOIIOjxhIH.N7/SH4bW"}
 ])
 UserSite.create!([
-  {user_id: 1, site_id: 3, rating: 4},
-  {user_id: 1, site_id: 1, rating: 2},
-  {user_id: 2, site_id: 4, rating: 3},
-  {user_id: 2, site_id: 1, rating: 2},
-  {user_id: 3, site_id: 4, rating: 2},
-  {user_id: 3, site_id: 2, rating: 1},
-  {user_id: 4, site_id: 2, rating: 2},
-  {user_id: 4, site_id: 3, rating: 1},
-  {user_id: 5, site_id: 2, rating: 4},
-  {user_id: 5, site_id: 3, rating: 2},
-  {user_id: 6, site_id: 2, rating: 4},
-  {user_id: 6, site_id: 4, rating: 4}
+ 
 ])
 UserStudy.create!([
-  {user_id: 1, study_id: 24, accepted: false},
-  {user_id: 1, study_id: 11, accepted: false},
-  {user_id: 10, study_id: 8, accepted: false}
+
 ])
