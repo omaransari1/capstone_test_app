@@ -5,9 +5,7 @@ Request.create!([
 
 ])
 Researcher.create!([
-  {first_name: "Sarah", last_name: "Jones", email: "sjones@gmail.com", password_digest: "$2a$10$eZM5YSyf/KhKaqR2nq7PWecmDNY/HWAdeGRvDNWO.BjrcpxByIeei", site_id: 6},
-  {first_name: "Hulk", last_name: "Hogan", email: "hhogan@gmail.com", password_digest: "$2a$10$k.6C0va0yETEEuLwUPkfAuYNYYDC8X.VZw0Z4uAD.hqmv.YPdjDra", site_id: 5},
-  {first_name: "John", last_name: "Researcher", email: "jresearcher@gmail.com", password_digest: "$2a$10$ZqgbSNtJ202T.QAAmu00Ce19DHAebA7Beowzn59lDnahQAdBM3AG6", site_id: 4}
+ 
 ])
 Site.create!([
   {name: "Apex Medical Research", address: "2555 S King Dr, Chicago, IL 60616", email: "apexmr@gmail.com", phone_number: "312-791-3241", image: "https://c1.staticflickr.com/7/6115/6354516141_33246dd5c6_b.jpg"},
@@ -26,36 +24,8 @@ Site.create!([
   {name: "Fox Valley Clinical Research", address: "2088 Ogden Ave # 180, Aurora, IL 60504", email: "fvalley@gmail.com", phone_number: "630-723-3486", image: "https://c1.staticflickr.com/8/7246/7695105056_ab978bd969_b.jpg"}
 ])
 SiteStudy.create!([
-  {site_id: 6, study_id: 24},
-  {site_id: 5, study_id: 24},
-  {site_id: 6, study_id: 2},
-  {site_id: 4, study_id: 11},
-  {site_id: 4, study_id: 1},
-  {site_id: 4, study_id: 2},
-  {site_id: 4, study_id: 4},
-  {site_id: 4, study_id: 19},
-  {site_id: 4, study_id: 8},
-  {site_id: 4, study_id: 5},
-  {site_id: 4, study_id: 10},
-  {site_id: 4, study_id: 15},
-  {site_id: 4, study_id: 17},
-  {site_id: 4, study_id: 13},
-  {site_id: 4, study_id: 20},
-  {site_id: 4, study_id: 7},
-  {site_id: 4, study_id: 14},
-  {site_id: 4, study_id: 9},
-  {site_id: 4, study_id: 18},
-  {site_id: 4, study_id: 3},
-  {site_id: 4, study_id: 12},
-  {site_id: 4, study_id: 16},
-  {site_id: 6, study_id: 4},
-  {site_id: 6, study_id: 19},
-  {site_id: 6, study_id: 8},
-  {site_id: 6, study_id: 5},
-  {site_id: 6, study_id: 10},
-  {site_id: 6, study_id: 15},
-  {site_id: 6, study_id: 17}
 ])
+
 Study.create!([
   {name: "Breathing Focused Yoga in Social Anxiety Disorder", condition: "Social Anxiety Disorder", compensation: 800, image: "https://upload.wikimedia.org/wikipedia/commons/3/33/Yoga_in_the_evening,_Hindu_culture_religion_rites_rituals_sights.jpg", description: "The goal of this study is to determine the safety and effectiveness of Breathing Focused Yoga (BFY) in improving symptoms of social anxiety disorder (SAD). Patients with SAD will be randomized to 8 weeks of yoga or 8 weeks of wait-list. Symptom severity and quality of life will be compared between the two groups before and after the 8 weeks.", duration: "8 weeks", ctgid: "NCT02266680", intervention: "Behavioral: Yoga Treatment Group"},
   {name: "The Correlation Between Blood omega3 and ADHD", condition: "ADHD", compensation: 800, image: "https://c1.staticflickr.com/7/6081/6108414083_e908192096_b.jpg", description: "Attention deficit hyperactivity disorder (ADHD) is a major problem in children and adolescents. Clinical and biochemical evidence suggests that deficiencies of polyunsaturated fatty acids (PUFA) could be related to ADHD. PUFAs are the major components of brain with important physiologically active functions. Aim: Study the relationship between omega3 blood values and ADHD clinical status. Methods: The investigators will recruit 30 children, who have been diagnosed with ADHD by a child psychiatrist. In addition the investigators will recruit a control group of 30 children without ADHD and related neuropsychiatric syndromes. Blood will be taken from all children. The ADHD children will be asked to consume omega3 capsules for 6 month. After 3 and 6 months, all children will undergo clinical examination and blood tests will be taken for omega3 index analysis. Blind frozen samples of isolated red blood cell (RBC) will be analyzed according to the omega3 index methodology.\n\n", duration: "6 months", ctgid: "NCT02391428", intervention: "Dietary Supplement: omega3 capsules"},
@@ -79,15 +49,7 @@ Study.create!([
   {name: "Dietary Intervention for Bipolar Disorder", condition: "Bipolar disorder", compensation: 4500, image: "https://mejorconsalud.com/wp-content/uploads/2014/06/Humor.jpg", description: "Bipolar disorder (BD) is a chronic, often disabling illness, and many individuals remain symptomatic despite pharmacotherapy. Significant mood variability often persists throughout the lifespan and predicts relapse, leading to functional impairment. Metabolism of dietary essential polyunsaturated fatty acids has been shown to be upstream of the neuroinflammatory processes that may lead to neurotoxicity and chronicity of illness in BD. The investigators hypothesize that an intervention diet designed to alter intake of polyunsaturated fatty acids that augments mood stabilizing medications will reduce inflammation; and that the reduction of inflammation will reduce mood variability in bipolar disorder. After a two-the investigatorsek baseline-monitoring period, the investigators will randomize individuals with BD to an intervention or a control diet. Mood will be measured daily using a smartphone. Phase 2 will consist of 12 the investigatorseks of a less intense intervention. Follow-up will then be completed at 6, 9, and 12 months post-baseline to assess for recurrence of mood episodes. By maintaining a certain diet in addition to taking mood-stabilizing medication, researchers hope to see whether specific dietary plans have any bearing on mood variability.", duration: "12 months", ctgid: "NCT02272010", intervention: "Other: Experimental Diet"}
 ])
 User.create!([
-  {first_name: "Omar", last_name: "Ansari", email: "omar@gmail.com", password_digest: "$2a$10$LhivEdx6PTjPoYEMmibofe/.rtl0QNoojizz8KYvLEDJxhed2Uy7."},
-  {first_name: "Peter", last_name: "Jang", email: "pjang@gmail.com", password_digest: "$2a$10$P6rUVtxRJrKMXLRO9i3k8OS91qNsgfq8wmYEJd/VM3swv8bO125kC"},
-  {first_name: "Jerry", last_name: "Redmond", email: "jredmond@gmail.com", password_digest: "$2a$10$fml8QnFdZgB.58HiQ4gjnOFynY18.IE6e9p8GHQyRnzOqm3GfvdzW"},
-  {first_name: "Eric", last_name: "McNees", email: "emcness@gmail.com", password_digest: "$2a$10$VDwVod6w3IvSm6ZO00gyC.InaSgVyVtO/jXspbnfwxZdud5wG6fNe"},
-  {first_name: "Cynthia", last_name: "Johnson", email: "cjohnson@gmail.com", password_digest: "$2a$10$.32ljvibI5ZneY2S3Dv.F.YgnuKLj0l5a9d3afdjSHl0fAjDU4njm"},
-  {first_name: "Jay", last_name: "Wengrow", email: "jay@gmail.com", password_digest: "$2a$10$Zilff3CfdD.VdoSXQGo5tOZwvNjoZEpnxqhDqqWqZj/EAbrcM4K/y"},
-  {first_name: "Mike", last_name: "Murphy", email: "mmurphy5@gmail.com", password_digest: "$2a$10$zKBicFWVKBEL83ib6P.Osu5xx78VTyx47Qn9qk6rLYFR7QNIGlZDa"},
-  {first_name: "Randy", last_name: "Savage", email: "rsavage@gmail.com", password_digest: "$2a$10$zvojqxrcJN1KsEhD2STLgO/QwGrqBFAhruuehCJEoa7r.xD2d0FEa"},
-  {first_name: "John", last_name: "Subject", email: "jsubject@gmail.com", password_digest: "$2a$10$qZDb6lFyRfRbqScqF1tyneEw5kkhEirjDapOIIOjxhIH.N7/SH4bW"}
+
 ])
 UserSite.create!([
  
