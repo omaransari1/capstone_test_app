@@ -1,53 +1,48 @@
-
-    <div ng-app="app">
-        <div ng-controller="studiesCtrl" ng-init="setup()">
+<div ng-app="app">
+    <div ng-controller="studiesCtrl" ng-init="setup()">
       
-    <!-- Content Wrapper Start -->
-    <div class="content_wrapper">
-      <!-- Blog Breadscrumb Start -->
-        <div class="breadcrumb_wrap" data-stellar-background-ratio="0.3" style="background: url(/images/bg_img.jpg); background-attachment: fixed; background-position: 50% 50%;">
-          <div class="breadcrumb_wrap_inner">
-              <div class="container">
-                <h1>Available Studies</h1>
-                    <ul class="breadcrumbs">
-                      <li><a href="index.html">Home</a> /</li>
-                      <li>Studies (list view)</li>
-                    </ul>
-              </div>
+        <!-- Content Wrapper Start -->
+        <div class="content_wrapper">
+            <!-- Blog Breadscrumb Start -->
+            <div class="breadcrumb_wrap" data-stellar-background-ratio="0.3" style="background: url(/images/bg_img.jpg); background-attachment: fixed; background-position: 50% 50%;">
+                 <div class="breadcrumb_wrap_inner">
+                    <div class="container">
+                         <h1>Available Studies</h1>
+                            <ul class="breadcrumbs">
+                                <li><a href="index.html">Home</a> /</li>
+                                <li>Studies (list view)</li>
+                            </ul>
+                    </div>
+                 </div>
             </div>
-        </div>
-        <!-- Blog Breadscrumb Start -->
+            <!-- Blog Breadscrumb Start -->
         
-        <!-- Courses Start -->
-        <div id="courses_wrapper" class="courses_wrapper">
+            <!-- Courses Start -->
+            <div id="courses_wrapper" class="courses_wrapper">
             
-            <!-- Courses Content Start -->
-            <div class="container">
-              <!-- Course Wrapper Start -->
-                <div class="course_wrapp col-lg-9 col-md-8 col-sm-12 col-xs-12">
+                <!-- Courses Content Start -->
+                <div class="container">
+                    <!-- Course Wrapper Start -->
+                    <div class="course_wrapp col-lg-9 col-md-8 col-sm-12 col-xs-12">
                     <!-- Courses Top Search Start -->
-                     <div class="course_to_search_wrapp">
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                          <div class="course_to_search_inner">
-                                <div class="course_to_search">
+                        <div class="course_to_search_wrapp">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="course_to_search_inner">
+                                    <div class="course_to_search">
                                     
-                                    <div class="search_course">
-                            <input ng-model="nameFilter" placeholder="Filter by condition" list="conditions">
-                            <datalist id="conditions">
-                              <option ng-repeat="study in studies">{{ study.condition }}</option>  
-                            </datalist>
-                      <!-- <form method="post" action="#">
-                          <input class="form-control" placeholder="Search by condition" name="s" type="text">
-                            <button type="submit" class="btn btn_search"><i class="fa fa-search"></i></button>
-                        </form> -->
-                                    </div>
-                                    <div>
-                                      <button ng-click="changeOrderAttribute('compensation')">Order by Compensation {{ getSortIcon('compensation') }}</button>
+                                        <div class="search_course">
+                                            <input ng-model="nameFilter" placeholder="Filter by condition" list="conditions">
+                                            <datalist id="conditions">
+                                                <option ng-repeat="study in studies">{{ study.condition }}</option>  
+                                            </datalist>
+                                        </div>
+                                        <div>
+                                        <button ng-click="changeOrderAttribute('compensation')">Order by Compensation {{ getSortIcon('compensation') }}</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div> 
+                        </div> 
                     <!-- Courses Top Search End -->
                     
                     <!-- Courses Wrapper Start -->
@@ -106,25 +101,25 @@
         <!-- Count Section End -->
         
         
+        </div>
+        <!-- Content Wrapper End -->
+
+
+        <!-- Offcanvas Menu Start -->
+        <div class="offcanvas_overlay"></div>
+        <!-- Offcanvas Menu End -->
     </div>
-    <!-- Content Wrapper End -->
-
-
-    <!-- Offcanvas Menu Start -->
-    <div class="offcanvas_overlay"></div>
-    <!-- Offcanvas Menu End -->
-  </div>
 </div>
     
     <!-- JavaScript -->        
-        <script type="text/javascript" src="/js/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" src="/js/jquery-3.1.0.min.js"></script>
     <script type="text/javascript" src="/js/modernizr.custom.js"></script>
     <script type="text/javascript" src="/js/jquery.dlmenu.js"></script>
     <script type="text/javascript" src="/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/js/bootstrap-select.js"></script>
     <script type="text/javascript" src="/js/jquery-plugin-collection.js"></script>
     
-  <script type="text/javascript" src="/js/owl-carousel.js"></script>
+    <script type="text/javascript" src="/js/owl-carousel.js"></script>
     
     <script type="text/javascript" src="/js/rev/jquery.themepunch.tools.min.js"></script>
     <script type="text/javascript" src="/js/rev/jquery.themepunch.revolution.min.js"></script>
